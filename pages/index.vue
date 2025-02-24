@@ -16,10 +16,13 @@ const list = [
     title: "Year",
   },
 ];
+const cards = [
+  {}, {}, {},
+]
 
 let currentCategory = ref("today");
 
-function generateRandomValue(number = 7) {
+function generateRandomValue(number) {
   let values = [];
   for (let j = 0; j < number + 1; j++) {
     values.push(Math.floor(Math.random() * 100));
@@ -54,31 +57,20 @@ onMounted(() => {
     <main class="grid w-full gap-4">
       <Tabs default-value="Today" class="w-full" @click="setCategory">
         <TabsList class="max-w-[400px]">
-          <TabsTrigger
-            v-for="(item, index) in list"
-            :key="index"
-            :value="item.title"
-          >
+          <TabsTrigger v-for="(item, index) in list" :key="index" :value="item.title">
             {{ item.title }}
           </TabsTrigger>
         </TabsList>
-        <TabsContent
-          class="w-[100%]"
-          v-for="(item, index) in list"
-          :key="index"
-          :value="item.title"
-        >
-          <Chart
-            v-if="data.length > 0"
-            :currentCategory="currentCategory"
-            :data="data"
-          />
+        <TabsContent class="w-[100%]" v-for="(item, index) in list" :key="index" :value="item.title">
+          <Chart v-if="data.length > 0" :currentCategory="currentCategory" :data="data" />
         </TabsContent>
       </Tabs>
     </main>
-    <footer>
-      <div class="grid gap-4 lg:grid-cols-3">
-        <Card v-for="(item, index) in cards" :card="item" :key="index" />
+    <footer class="w-full">
+      <!-- <div class="grid gap-4 lg:grid-cols-3"> -->
+        <div>
+        <!-- <Card v-for="(item, index) in cards" :card="item" :key="index" /> -->
+        <Stack />
       </div>
     </footer>
   </div>
