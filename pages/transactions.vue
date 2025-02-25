@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const loading = ref(false);
+import { ref, watchEffect } from "vue";
+
+const { data, pending: loading, error, refresh } = useFetch("/api/finance");
+
+watchEffect(() => {
+  refresh();
+});
 </script>
 
 <template>
@@ -11,9 +17,9 @@ const loading = ref(false);
       </div>
       <ProductNew />
     </header>
-    <main class="">
+    <main>
       <div>
-        <Area />
+        <Transactions :currentCategory="'today'" :data="data" />
       </div>
     </main>
   </div>

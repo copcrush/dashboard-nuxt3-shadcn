@@ -4,7 +4,7 @@ const area = computed(() => ({
         type: 'area'
     },
     title: {
-        text: 'Production, consumption and trade surplus of electrical power'
+        text: 'Incoming Finance'
     },
     subtitle: {
         text: 'Source: <a ' +

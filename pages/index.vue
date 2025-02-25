@@ -62,16 +62,13 @@ onMounted(() => {
           </TabsTrigger>
         </TabsList>
         <TabsContent class="w-[100%]" v-for="(item, index) in list" :key="index" :value="item.title">
-          <Chart v-if="data.length > 0" :currentCategory="currentCategory" :data="data" />
+          <Area v-if="data.length > 0" :currentCategory="currentCategory" :data="data" />
         </TabsContent>
       </Tabs>
     </main>
-    <footer class="w-full">
-      <!-- <div class="grid gap-4 lg:grid-cols-3"> -->
+    <!-- <footer class="w-full">
         <div>
-        <!-- <Card v-for="(item, index) in cards" :card="item" :key="index" /> -->
-        <Stack />
       </div>
-    </footer>
+    </footer> -->
   </div>
 </template>

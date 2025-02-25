@@ -17,14 +17,17 @@ const open = ref(true);
     </div>
     <div class="hidden lg:flex w-[200px] h-screen flex-col justify-between border-r">
       <SidebarMenu />
-      <div class="bg-[#17334F] h-20 flex flex-col justify-center items-center">
-        <div class="flex justify-center items-center gap-4">
-          <img src="@/assets/logo.png" alt="logo" class="w-8 h-8"/>
-          <p class="text-[#6AE683]">Username</p>
+      <div class="h-20 flex flex-col justify-center items-start">
+        <div class="ml-5 flex flex-col gap-2">
+          <div class="flex justify-center items-center gap-4">
+            <img src="https://github.com/shadcn.png" alt="logo" class="w-8 h-8 rounded-full" />
+            <p class=" text-black">User: Bob</p>
+          </div>
+          <div class="flex justify-start items-center">
+            <p class="text-red-500">Log out</p>
+          </div>
         </div>
-        <div class="flex justify-center items-center">
-          <p class="text-red-400">Log out</p>
-        </div>
+
       </div>
     </div>
   </div>
